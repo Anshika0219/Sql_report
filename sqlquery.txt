@@ -1,0 +1,22 @@
+CREATE DATABASE students;
+USE student;
+CREATE TABLE studentsinfo
+(
+StudentID int,
+StudentName  varchar(8000),
+PhoneNumber bigint,
+AddressOfStudent varchar(8000),
+City varchar(8000),
+Country varchar(8000)
+);
+
+DROP TABLE studentsinfo;
+DROP DATABASE students;
+alter table studentsInfo add bloodGroup varchar(8000);
+alter table studentsInfo drop column bloodGroup;
+alter table studentsInfo add DOB DATE;
+alter table studentsInfo alter column DOB datetime ;
+
+insert into studentsInfo values('12','john','6789556744,'HSR','Banglure','india','14-02-2000');    
+truncate table studentsInfo;
+sp_rename 'studentsInfo','InfoStudents';

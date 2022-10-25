@@ -1,0 +1,180 @@
+SQL :- SQL stands for Structured Query Language.SQL lets you access and manipulate databases
+       SQL became a standard of the American National Standards Institute (ANSI) in 1986, and of the International Organization for Standardization (ISO) in 1987.
+
+SQL Server :- SQL Server is a relational database management system (RDBMS) developed by Microsoft.It is also called MS SQL Server. 
+            This product is built on the basic function of storing and retrieving data as required by other applications. 
+            It can be run either on the same computer or on another across a network.
+
+*main components and services of SQL server:
+      Database Engine: This component handle storage, Rapid transaction Processing, and Securing Data.
+
+      SQL Server: This service starts, stops, pauses, and continues an instance of Microsoft SQL Server. Executable name is sqlservr.exe.
+
+      SQL Server Agent: It performs the role of Task Schedule.It can be triggered by any event or as per demand.Executable name is sqlagent.exe.
+
+      SQL Server Browser: This listens to the incoming request and connects to the desired SQL server instance.Executable name is sqlbrowser.exe.
+
+      SQL Server Full-Text Search: This lets user running full-text queries against Character data in SQL Tables.Executable name is fdlauncher.exe.
+
+      SQL Server VSS Writer: This allows backup and restoration of data files when the SQL server is not running.Executable name is sqlwriter.exe.
+
+      SQL Server Analysis Services (SSAS): Provide Data analysis, Data mining and Machine Learning capabilities. 
+              SQL server is integrated with R and Python language for advanced analytics. Executable name is msmdsrv.exe.
+
+       SQL Server Reporting Services (SSRS): Provides reporting features and decision-making capabilities.
+                             It includes integration with Hadoop. Executable name is ReportingServicesService.exe.
+
+      SQL Server Integration Services (SSIS): Provided Extract-Transform and Load capabilities of the different type of data from one source to another. 
+										 It can be view as converting raw information into useful information. Executable name is MsDtsSrvr.exe.
+    *featuresof sql server
+    user experience
+    availability
+    performance
+    analytics
+    security
+    buisness intelligence
+
+      Importance of SQL Server Instances
+     1. For installation of different versions on one machine
+     2. For cost reduction
+     3. For maintenance of development, production and test environments separately
+     4. For reducing temporary database problems
+     5. For separating security privileges
+     6. For maintaining a standby server
+
+
+Database :- A database is an organized collection of data, so that it can be easily accessed and managed.
+            you can organize data into tables, rows, columns, and index it to make it easier to find relevant information.
+   
+      types of DBMS :-
+                       hierarchical DBMS
+                       network DBMS
+                       relational DBMS
+                      object-oriented DBMS
+ 
+
+4 types of SQL Command
+1. Data Definition Language(DDL) :- It consists of the commands used to define the schema.
+    CREATE :- The CREATE DATABASE statement is used to create a new SQL database.
+   syntax :- 
+            CREATE DATABASE databasename;
+
+     DROP:- This command is used to delete objects from the database.
+     syntax :- 
+               DROP DATABASE databasename;
+
+      ALTER:- This is used to alter the structure of the database.
+       syntax :- 
+                   ALTER TABLE table_name
+                   ADD column_name datatype;
+
+                   ALTER TABLE table_name
+                   DROP COLUMN column_name;
+
+  TRUNCATE :- This is used to remove all records from a table, including all spaces allocated for the records are removed.
+      syntax :- truncate table tablename;
+2. Data Manipulation Language(DML) :- It deals with the manipulation of data present in database.
+      INSERT :- It is used to insert data into a table.
+     syntax:-
+           INSERT INTO TABLENAME('value1','value2','value3'); 
+3. Data Control Language(DCL) :- It deals with the right permission and controls of the database system.
+4. Transaction Control Language(TCL) :- It constist of command which deals with the transaction of database.
+
+Data Types :- The SQL Server Data Types are the attribute that specifies what types of data entered by the user such as integer, character, decimal, date time, etc. 
+             In SQL Server Database, each column of a table, all the local variables, and parameters must have a data type.
+
+     1. Exact numeric
+     2. Approximate numeric
+     3. Date and time
+     4. Character strings
+     5. Unicode character strings
+     6. Binary strings
+     7. Other data types
+
+Exact numeric :-
+                  1. bigint - It stores whole numbers in the range given 8 bytes
+                  2. int - It stores whole numbers in the range given 4 bytes (2,147,483,648)
+                  3. smallint -	It stores whole numbers in the range given 2 bytes (32,767)	
+                  4. tinyint - It stores whole numbers in the range given 1 byte (0,255)	
+                  5. bit - It can take 0, 1, or NULL values.1 byte/8bit column (0,1)
+
+Approximate numeric :- These datatypes in SQL are mostly used in scientific calculations.
+                                             1. float - Used for a floating precision number 7 Digit (−1.79E+308,1.79E+308)
+
+Date and time :- It stores data of type Date and time.
+                1. DateTime Used for specifying a date and time from January 1, 1753 to December 31, 9999.	8 bytes(1753-01-01,9999-12-31)
+                2. date	Used to store only date from January 1, 0001 to December 31, 9999 3 bytes (0001-01-01,9999-12-31)
+                3. time	Used for storing only time only values with an accuracy of 100 nanoseconds. 5 bytes
+
+Character Strings :- It allows the user to define the data type of character which can be of fixed and variable length. 
+                   1. char - It is a character string with a fixed width.  8000 chars
+                   2. varchar - This is a character string with variable width.
+                   3. varchar (max)	This is a character string with a variable width. It stores a maximum of 1,073,741,824 characters.
+
+Unicode Character Strings :- This category store the full range of Unicode character which uses the UTF-16 character encoding.
+                                                         1.  nchar - It is a Unicode string of fixed width (0 ,4000 )
+                       2. nvarchar - It is a unicode string of variable width (0 ,4000) 
+
+Binary Strings :- This category contains a binary string of fixed and variable length.
+               1. binary - It is a fixed width binary string. It stores a maximum of 8,000 bytes.
+
+Constraints :- Constraints are used to limit the type of data that can go into a table. This ensures the accuracy and reliability of the data in the table. 
+                                    If there is any violation between the constraint and the data action, the action is aborted.
+       1.  Not Null :- The NOT NULL constraint enforces a column to NOT accept NULL values.
+                   This enforces a field to always contain a value, which means that you cannot insert a new record, or update a record without adding a value to this field.
+
+       2. Unique :- The UNIQUE constraint ensures that all values in a column are different. 
+
+       3. Check :- The CHECK constraint is used to limit the value range that can be placed in a column.
+
+       4.  Default :- The DEFAULT constraint is used to set a default value for a column.The default value will be added to all new records, if no other value is specified.  
+      
+       5. Index :- Indexes are used to retrieve data from the database more quickly than otherwise. The users cannot see the indexes, they are just used to speed up searches/queries.
+
+            keys in DATABASE :-
+                                 candidate Key
+                                 super key
+                                 primery  key
+                                 alternate key
+                                 foreign key
+SQL clause :-
+            where clause :-
+                          The WHERE clause is used to filter records.
+                          It is used to extract only those records that fulfill a specified condition.
+                          Syntax :- 
+                      SELECT column1, column2, ...
+                      FROM table_name
+                      WHERE condition;
+
+Order By Clause :- 
+                  The ORDER BY keyword is used to sort the result-set in ascending or descending order.
+                  The ORDER BY keyword sorts the records in ascending order by default. To sort the records in descending order, use the DESC keyword.
+           syntax :-  
+                 SELECT column1, column2, ...
+                 FROM table_name
+                 ORDER BY column1, column2, ... ASC|DESC;
+
+Group By clause :-
+                  The GROUP BY statement groups rows that have the same values into summary rows, like "find the number of customers in each country".
+                  The GROUP BY statement is often used with aggregate functions (COUNT(), MAX(), MIN(), SUM(), AVG()) to group the result-set by one or more columns.
+        syntax :-
+             SELECT column_name(s)
+             FROM table_name
+             WHERE condition
+            GROUP BY column_name(s)
+            ORDER BY column_name(s);
+
+     IN :-
+             The IN operator allows you to specify multiple values in a WHERE clause.
+              The IN operator is a shorthand for multiple OR conditions.
+    syntax :-
+            SELECT column_name(s)
+            FROM table_name
+            WHERE column_name IN (value1, value2, ...); 
+    
+Sub Query :- A subquery is a query within another query. The outer query is known as the main query, and the inner query is known as a subquery.
+    Syntax :-            
+           SELECT column_name  
+           FROM table_name  
+          WHERE column_name expression operator   
+                      ( SELECT column_name  from table_name WHERE ... );  
