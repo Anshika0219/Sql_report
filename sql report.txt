@@ -170,11 +170,47 @@ Group By clause :-
     syntax :-
             SELECT column_name(s)
             FROM table_name
-            WHERE column_name IN (value1, value2, ...); 
-    
+            WHERE column_name IN (value1, value2, ...);
+ 
+Having Clause :- The HAVING clause was added to SQL because the WHERE keyword cannot be used with aggregate functions.
+                                          The WHERE clause places conditions on the selected columns, whereas the HAVING clause places conditions on groups created by the GROUP BY clause.
+            SYNTAX  :-
+                SELECT column_name(s)
+                FROM table_name
+                WHERE condition
+                GROUP BY column_name(s)
+                HAVING condition
+                ORDER BY column_name(s);
 Sub Query :- A subquery is a query within another query. The outer query is known as the main query, and the inner query is known as a subquery.
     Syntax :-            
            SELECT column_name  
            FROM table_name  
           WHERE column_name expression operator   
                       ( SELECT column_name  from table_name WHERE ... );  
+
+JOIN SQL :-
+            A JOIN clause is used to combine rows from two or more tables, based on a related column between them.
+
+   TYPES OF JOIN :-    1.INNER JOIN :- The INNER JOIN keyword selects records that have matching values in both tables.
+                               SYNTAX :-
+                                        SELECT column_name(s)
+                                        FROM table1
+                                       INNER JOIN table2
+                                       ON table1.column_name = table2.column_name;
+
+                   2.LEFT JOIN :- The LEFT JOIN keyword returns all records from the left table (table1), and the matching records from the right table (table2). 
+                                   The result is 0 records from the right side, if there is no match.
+
+                   3.RIGHT JOIN :- The RIGHT JOIN keyword returns all records from the right table (table2), and the matching records from the left table (table1).
+                                    The result is 0 records from the left side, if there is no match.
+
+                   4.FULL JOIN :- The FULL OUTER JOIN keyword returns all records when there is a match in left (table1) or right (table2) table records.
+
+                   5.CROS JOIN :- When we combine two or more tables with each other without any condition (where or on) then we call this type of joins Cartesian or cross join. 
+                                  In Cross Join, each record of a table is joined with each record of the other table involved in the join
+
+                   6.SELF JOIN :- the table is joined with itself.
+                                 SYNTAX :-
+                                          SELECT column_name(s)
+                                          FROM table1 T1, table1 T2
+                                          WHERE condition;

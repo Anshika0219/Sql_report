@@ -20,3 +20,56 @@ alter table studentsInfo alter column DOB datetime ;
 insert into studentsInfo values('12','john','6789556744,'HSR','Banglure','india','14-02-2000');    
 truncate table studentsInfo;
 sp_rename 'studentsInfo','InfoStudents';
+
+//........JOIN........//
+create database company;
+use company;
+
+create table Employe
+(
+Employeid int,
+Employename varchar(500),
+Employeage int,
+DepartmentId int,
+SalleryId int
+);
+
+insert into Employe values('1','John deo','25','2','4'),('2','Anshika Agrawal','20','12','23'),('3','niya sharma','21','2','4'),('4','neha soni','24','2','5')
+,('5','simran sen','27','10','4'),('6','diya rai','30','23','42'),('7','anu pandey','25','6','8'),('8','anshi sharma','27','5','9'),
+('9','priya sharma','29','24','4'),('10','nitya raj','26','7','2');
+
+create table Department
+(
+DepartmentId int,
+Departmentname varchar(500)
+);
+
+insert into Department values('1','IT'),('2','HSR'),('3','CS'),('4','other'),('5','ME'),('6','CE'),('7','EE'),('8','EX'),('9','HR'),('10','EC');
+
+create table Sallery 
+(
+SalleryId int,
+Sallery bigint
+);
+insert into Sallery values('1','40000'),('2','60000'),('3','6500'),('4','80000'),('5','450'),('6','70000'),('7','50000'),('8','5000'),('9','1000'),('10','8000');
+
+select * from Employe;
+select * from Department;
+select * from Sallery;
+select Employename,Departmentname 
+from Employe
+inner join Department on Employe.DepartmentId = Department.DepartmentId 
+inner join Sallery on Employe.SalleryId = Sallery.SalleryId
+where Sallery>10000;
+
+//.......IN Operator use......//
+select * from Employe where Employeid in(1,2,3);//dispaly only id 1,2 and 3 data
+select * from Employe where Employeid not in(1,2,3);//Not display id 1,2 and 3 display only other id
+
+//..........Group by clause.....//
+select COUNT(Employeid),Employeage from Employe where Employeage > 25
+group by Employeage;
+
+//........order by clause.....//
+select * from Employe where Employeage <= 25
+order by Employeid ,Employeage desc;
